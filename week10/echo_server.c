@@ -48,8 +48,11 @@ int main(int argc, char *argv[])
             printf("Connected client %d \n", i+1);
         
         while((str_len=read(clnt_sock, message, BUF_SIZE))!=0)
+        {    
             write(clnt_sock, message, str_len);
-        
+            message[str_len] = 0;     // 이상한게 안찍히고 갈끔하게 나옴
+            printf("%s \n", message); // 클라이언트에서 실행한게 나옴
+        }
         close(clnt_sock);
     }
     close(serv_sock);
@@ -63,7 +66,12 @@ void error_handling(char *message)
     exit(1);
 }
 
+
 // gcc echo_server.c -o eserver
 // ./eserver 9190
   
-// 실행 결과 : 멈춤(클라이언트 기다리기) → 연결하면 Connected client 1
+// 실행 결과 : 멈춤(클라이언트 기다리기) 
+//           -> 연결하면 Connected client 1
+//			 -> hello
+//           -> 연결하면 Connected client 2
+//			 -> Hi (등 실행하는 값 나옴)
