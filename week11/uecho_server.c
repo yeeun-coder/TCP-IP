@@ -53,6 +53,6 @@ void error_handling(char *message)
 }
 
 
-gcc uecho_server.c -o userver
-./userver 9190
-실행 결과 : 멈춤(클라이언트 기다리기)
+// gcc uecho_server.c -o userver
+// ./userver 9190
+// 실행 결과 : 멈춤(클라이언트 기다리기)
