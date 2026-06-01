@@ -18,3 +18,5 @@
 * 간편한 기능
   :set number -> vi 해서 라인수 볼 수 있게 해준다.
 
+ESC yy
+ESC P
