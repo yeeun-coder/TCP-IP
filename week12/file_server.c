@@ -1,4 +1,7 @@
-.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
@@ -20,7 +23,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
     
-    fp=fopen("file_server.c", "rb");
+    fp=fopen("input.txt", "rb");
     serv_sd=socket(PF_INET, SOCK_STREAM, 0);
     
     memset(&serv_adr, 0, sizeof(serv_adr));
